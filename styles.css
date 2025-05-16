@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+p#quote {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+  min-height: 3rem;
+}
+
+.mood-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+button[data-mood="happy"] { background: #ffeb3b; color: #333; }
+button[data-mood="calm"] { background: #4fc3f7; }
+button[data-mood="energetic"] { background: #ff5722; }
+button[data-mood="dreamy"] { background: #ab47bc; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  p#quote { font-size: 1rem; }
+  button { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
+}
+
+/* Accessibility */
+@media (prefers-contrast: high) {
+  .container { background: #fff; }
+  h1, p#quote { color: #000; }
+}
